@@ -1,68 +1,79 @@
-#python program to create a simple calculator
+# Simple calculator Project
+# This is a simple Calculator project built using Python and Object-Oriented Programming (OOP) concepts.
 
-# 3 steps to build calculator program
-#   1. functions for operations 
-#   2. user input 
-#   3. print result 
+class Calculator:
 
-# step-1: create functions:
-# Function to add two numbers 
-def add(num1,num2):
-     return num1 + num2 
+    def add(self, num1, num2):
+        return num1 + num2
 
-# Function to substract two numbers 
-def sub(num1,num2):
-     return num1 - num2 
+    def sub(self, num1, num2):
+        return num1 - num2
+    
+    def mul(self, num1, num2):
+        return num1* num2
 
-# Function to multiply two numbers 
-def multiply(num1,num2):
-     return num1 * num2  
+    def div(self, num1, num2):
+        try:
+            return num1 / num2
+        except ZeroDivisionError:
+            return "you can not divide by zero"
 
-# Function to divide two numbers 
-def divide(num1,num2):
-     return num1 / num2 
 
-# Function to average two numbers 
-def avg(num1,num2):
-     return (num1 + num2)/2  
+    def squr(self, num1):
+        return num1 * 2
 
-#Step-2: user input 
+    def power(self, num1, num2):
+        return power ** power
+
+
+
+cal = Calculator()
+
 while True:
-     print("Please select a operation:\n " \
-      "1. Addition\n" \
-      "2. Substraction\n" \
-      "3. Multiplication\n" \
-      "4. Division\n" \
-      "5. Average\n" \
-      "6.Exit") 
+    print("\n====== CALCULATOR=====\n",
+    "1. ADD\n",
+    "2. Substract\n",
+    "3. multiply\n",
+    "4. Divide\n",
+    "5. Square\n",
+    "6. power \n ",
+    "7. Exit",)
 
-     select = int(input("Select a operation from 1,2,3,4,5,6: ")) 
-     if select == 6:
-          print("Thank you")
-          break
-     number1 = int(input("Enter first number: "))
-     number2 = int(input("Enter second number: "))
+    
+    try:
+        choice = int(input("Entre Your choice: "))
+    except ValueError:
+        print("please Entre a valid number ")
+        continue
 
-     #Step-3: Print the result 
+    if choice == 7:
+        print("program Ended")
+        break
+    
+    try:
+        num1 = float (input("Entre first Number: "))
+        num2 = float (input("Entre second Number: "))
+    except ValueError:
+        print("Invalid number input")
+        continue
+   
 
-     if select == 1:
-          print(number1, "+", number2, "= ", \
-               add(number1, number2))
-          
-     elif select == 2:
-          print(number1, "-", number2, "= ", \
-               sub(number1, number2)) 
-          
-     elif select == 3:
-          print(number1, "*", number2, "= ", \
-               multiply(number1, number2))
-          
-     elif select == 4:
-          print(number1, "/", number2, "= ", \
-               divide(number1, number2))
+    if choice == 1:
+        print("Result = ",cal.add(num1, num2))
 
-     elif select == 5:
-          print("(",number1, "+", number2, ")", "/", "2", "= ", \
-               avg(number1, number2)) 
-     else:
-          print("Invalid operation! Pls select again!")
+    elif choice == 2:
+        print("Result =",cal.sub(num1, num2))
+
+    elif choice == 3:
+        print("Result =",cal.mul(num1, num2))
+
+    elif choice == 4:
+        print("Result =",cal.div(num1, num2))
+
+    elif choice == 5:
+        print("Result =",cal.squr(num1))
+
+    elif choice == 6:
+        print("Result =",cal.squr(num1, num2))
+    else:
+        print("Invalid input choice correct input")
