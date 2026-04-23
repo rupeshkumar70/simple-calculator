@@ -20,7 +20,7 @@ class Calculator:
 
 
     def squr(self, num1):
-        return num1 * 2
+        return num1 * num1
 
     def power(self, num1, num2):
         return power ** power
@@ -49,13 +49,23 @@ while True:
     if choice == 7:
         print("program Ended")
         break
-    
+
+    if choice == 5:
+        try:
+            num1 = float(input("Enter your Numbe: "))
+            print("Result =",cal.squr(num1))
+        except ValueError:
+            print("invalid input")
+        continue
+
+        
+
     try:
         num1 = float (input("Entre first Number: "))
         num2 = float (input("Entre second Number: "))
     except ValueError:
         print("Invalid number input")
-        continue
+    continue
    
 
     if choice == 1:
@@ -70,8 +80,6 @@ while True:
     elif choice == 4:
         print("Result =",cal.div(num1, num2))
 
-    elif choice == 5:
-        print("Result =",cal.squr(num1))
 
     elif choice == 6:
         print("Result =",cal.squr(num1, num2))
